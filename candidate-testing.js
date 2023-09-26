@@ -12,11 +12,11 @@ let candidateAnswer = '';
 
 //TODO: Variables for Part 2
 let questions = [
-  "1) Who was the first American woman in space? ",
-  "2) True or false: 5 kilometer == 5000 meters? ",
-  "3) (5 + 3)/2 * 10 = ? ",
-  "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",
-  "5) What is the minimum crew size for the ISS? "
+  "1) Who was the first American woman in space?\nYour Answer: ",
+  "2) True or false: 5 kilometer == 5000 meters?\nYour Answer: ",
+  "3) (5 + 3)/2 * 10 = ?\nYour Answer: ",
+  "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?\nYour Answer: ",
+  "5) What is the minimum crew size for the ISS?\nYour Answer: "
 ];
 let correctAnswers = [
   'Sally Ride',
@@ -29,7 +29,7 @@ let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  candidateName = input.question('What is your name? ');
+  candidateName = input.question('Candidate Name: ');
 }
 
 function askQuestion() {
@@ -38,16 +38,17 @@ function askQuestion() {
   for (let i = 0; i < questions.length; i++) {
     let userInput = input.question(questions[i]);
     candidateAnswers.push(userInput);
+    console.log(`Correct Answer: ${correctAnswers[i]}\n`);
   }
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  for (let i = 0; i < candidateAnswers.length; i++) {
-    let messageFeedback = `Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}`;
-    console.log(messageFeedback);
-  }
+  // for (let i = 0; i < candidateAnswers.length; i++) {
+  //   let messageFeedback = `Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}`;
+  //   console.log(messageFeedback);
+  // }
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
