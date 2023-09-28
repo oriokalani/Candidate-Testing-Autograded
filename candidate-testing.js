@@ -49,12 +49,30 @@ function gradeQuiz(candidateAnswers) {
   //   let messageFeedback = `Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}`;
   //   console.log(messageFeedback);
   // }
+  let correctAnswersCounter = 0;
+  //TODO 3.2 use this variable to calculate the candidates score.
+  for (let i = 0; i < questions.length; i++) {
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      correctAnswersCounter++;
+    }
+  }
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+  let grade = correctAnswersCounter / questions.length * 100;
+  let messageOverallGrade = `>>> Overall Grade: ${grade}% (${correctAnswersCounter} of ${questions.length} responses correct) <<<`
+  let messagePassed = '>>> Status: PASSED <<<';
+  let messageFailed = '>>> Status: FAILED <<<';
 
+  console.log(messageOverallGrade);
+
+  if (grade >= 80) {
+    console.log(messagePassed);
+  } else {
+    console.log(messageFailed);
+  }
 
   return grade;
 }
+
 
 function runProgram() {
   askForName();
